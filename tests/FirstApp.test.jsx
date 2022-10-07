@@ -7,6 +7,17 @@ describe('Pruebas en FirstApp', () => {
     
     test('Debe hacer match con snapshot', () => { 
         const title = 'Hola, soy yo';
-        render( <FirstApp tittle={ title } /> )
-    });
+        const { container } = render( <FirstApp title={ title } /> )
+        
+        expect(container).toMatchSnapshot();
+        });
+    test('Debe mostrar el título en un h1', () => { 
+        const title = 'Hola, soy yo';
+        const { container, getByText } = render( <FirstApp title={ title } /> )
+
+        expect(getByText(title) ).toBeTruthy();
+
+        const h1 = container.querySelector('h1');
+        expect(h1.innerHTML).toContain( title );
+     })
  });

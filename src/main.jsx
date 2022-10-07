@@ -4,9 +4,9 @@ import { FirstApp } from './FirstApp';
 // import { CounterApp } from './CounterApp';
 import './styles.css';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
         <React.StrictMode>
             {/* <CounterApp value={0}/> */}
-            <FirstApp title="Hola, soy yo"/>
+            <FirstApp title='Hola, soy yo'/>
         </React.StrictMode>
 );
